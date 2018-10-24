@@ -98,3 +98,13 @@ curl "localhost:9200/_cat/indices?v"
         timestamp=$((`date +%s`*1000+`date +%-N`/1000000))
         today=`date '+%Y%m%d%H%M%S'`
 ```
+> Post and validate the dataset:
+
+```sh
+- To post dataset
+
+curl -X POST http://$elasticsearch:$port/indexname/health/$today -d @accounts.json --header "Content-Type: application/json" >> $CWD/$today.log
+
+- To validate imported dataset 
+echo "http://$elasticsearch:$port/indexname/health/$today"
+```
