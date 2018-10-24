@@ -14,18 +14,20 @@
 > A **Document** is a basic unit of information that can be indexed.
 
 > An index can potentially store a large amount of data that can exceed the hardware limits of a single node.To solve this problem, Elasticsearch provides the ability to subdivide your index into multiple pieces called **Shards**. 
+
 **Sharding is important for two primary reasons**
-It allows you to horizontally split/scale your content volume
-It allows you to distribute and parallelize operations across shards (potentially on multiple nodes) thus increasing performance/throughput
+- It allows you to horizontally split/scale your content volume
+- It allows you to distribute and parallelize operations across shards (potentially on multiple nodes) thus increasing performance/throughput
 
 > Elasticsearch allows you to make one or more copies of your index’s shards called **Replica**. 
-**Replication is important for two primary reasons:
+
+**Replication is important for two primary reasons:**
 - It provides high availability in case a shard/node fails.
 - It allows you to scale out your search volume/throughput since searches can be executed on all replicas in parallel.
 
 > Installation guide  https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html
 
-##Index Operation (CRUD- Create, Read, Update, Delete)
+## Index Operation (CRUD- Create, Read, Update, Delete)
 > List all index:
 
 ```sh
@@ -88,4 +90,11 @@ accounts.json
 
 curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_doc/_bulk?pretty&refresh" --data-binary "@accounts.json"
 curl "localhost:9200/_cat/indices?v"
+```
+
+> Used timestamp in script (It will help you to post and retrive data easily on the baisis of timestamp)
+
+```sh
+        timestamp=$((`date +%s`*1000+`date +%-N`/1000000))
+        today=`date '+%Y%m%d%H%M%S'`
 ```
