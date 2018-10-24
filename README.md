@@ -106,5 +106,6 @@ curl "localhost:9200/_cat/indices?v"
 curl -X POST http://$elasticsearch:$port/indexname/health/$today -d @accounts.json --header "Content-Type: application/json" >> $CWD/$today.log
 
 - To validate imported dataset 
+
 echo "http://$elasticsearch:$port/indexname/health/$today"
 ```
