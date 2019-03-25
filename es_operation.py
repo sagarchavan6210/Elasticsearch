@@ -1,8 +1,8 @@
-########################################################################
-# Author:Sagar Chavan
-# Elasticsearch Management Script to Create Index,
-# List Indices, Delete Index, cleanup the Index data
-# Usage: 
+	########################################################################
+	# Author:Sagar Chavan
+	# Elasticsearch Management Script to Create Index,
+	# List Indices, Delete Index, cleanup the Index data
+	# Usage: 
 #1. To get list of indices 
 #	python es_operation.py <get> 
 #2. To create index 
