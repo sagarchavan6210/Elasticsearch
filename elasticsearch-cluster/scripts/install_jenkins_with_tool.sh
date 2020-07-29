@@ -1,15 +1,5 @@
 #!/bin/bash
 
-#title           : install_jenkins_with_tool.sh
-#description     : This script will install java8 azure-cli.
-#author		       : Pratik Anand
-#date            : 2018-06-05
-#version         : 0.1
-#usage		       : bash install_jenkins_with_tool.sh
-#notes           : This will install java version 8 azure-cli jq
-#bash_version    : 4.4.19(1)-release 
-#==============================================================================
-
 script_version=0.1 ## Version change is compulsory 
 terrform_version=0.11.11
 
